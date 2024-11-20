@@ -15,6 +15,8 @@ public class Mini_Projet {
      */
     public static void main(String[] args) {
         Test n°234
+        gyegyd'é^d
+                Pi - Pi'
     }
     
 }
