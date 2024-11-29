@@ -61,5 +61,33 @@ public class Mini_Projet {
         GrilleDeCellules grille = new GrilleDeCellules(3, 3);
         System.out.println("\nAffichage de la grille de cellules :");
         System.out.println(grille); // Devrait afficher une matrice de cellules éteintes (O) } }
+    
+        // Test des méthodes d'activation
+        grille.activerLigneDeCellules(2);
+        System.out.println("Après activation de la ligne 2 :");
+        System.out.println(grille);
+
+        grille.activerColonneDeCellules(1);
+        System.out.println("Après activation de la colonne 1 :");
+        System.out.println(grille);
+
+        grille.activerDiagonaleDescendante();
+        System.out.println("Après activation de la diagonale descendante :");
+        System.out.println(grille);
+
+        grille.activerDiagonaleMontante();
+        System.out.println("Après activation de la diagonale montante :");
+        System.out.println(grille);
+
+        // Test de la méthode aléatoire
+        grille.activerLigneColonneOuDiagonaleAleatoire();
+        System.out.println("Après activation aléatoire :");
+        System.out.println(grille);
+
+        // Test de la méthode de mélange
+        grille.melangerMatriceAleatoirement(10);
+        System.out.println("Après mélange de la matrice (10 tours) :");
+        System.out.println(grille);
     }
-        }
+}
+
