@@ -14,6 +14,7 @@ public class Mini_Projet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         CelluleLumineuse cellule = new CelluleLumineuse();
         System.out.println(cellule); // Devrait afficher "O" (éteinte)
         
