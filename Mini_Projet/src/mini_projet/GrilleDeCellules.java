@@ -10,20 +10,20 @@ import java.util.Random;
  *
  * @author louis
  */
-import java.util.Random;
-
-import java.util.Random;
 
 public class GrilleDeCellules {
-    private CelluleLumineuse[][] matriceCellules;
-    private int nbLignes;
-    private int nbColonnes;
+    // Attributs de la classe
+    private CelluleLumineuse[][] matriceCellules; // Matrice de cellules lumineuses
+    private int nbLignes; // Nombre de lignes de la grille
+    private int nbColonnes; // Nombre de colonnes de la grille
 
+    // Constructeur de la classe
     public GrilleDeCellules(int p_nbLignes, int p_nbColonnes) {
         this.nbLignes = p_nbLignes;
         this.nbColonnes = p_nbColonnes;
         this.matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
 
+        // Initialisation de la grille avec des cellules lumineuses
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
                 matriceCellules[i][j] = new CelluleLumineuse();
@@ -31,6 +31,7 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour éteindre toutes les cellules de la grille
     public void eteindreToutesLesCellules() {
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
@@ -39,18 +40,21 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour activer (allumer) une ligne de cellules
     public void activerLigneDeCellules(int idLigne) {
         for (int j = 0; j < nbColonnes; j++) {
             matriceCellules[idLigne][j].activerCellule();
         }
     }
 
+    // Méthode pour activer (allumer) une colonne de cellules
     public void activerColonneDeCellules(int idColonne) {
         for (int i = 0; i < nbLignes; i++) {
             matriceCellules[i][idColonne].activerCellule();
         }
     }
 
+    // Méthode pour activer (allumer) la diagonale descendante
     public void activerDiagonaleDescendante() {
         int minDimension = Math.min(nbLignes, nbColonnes);
         for (int i = 0; i < minDimension; i++) {
@@ -58,6 +62,7 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour activer (allumer) la diagonale montante
     public void activerDiagonaleMontante() {
         int minDimension = Math.min(nbLignes, nbColonnes);
         for (int i = 0; i < minDimension; i++) {
@@ -65,6 +70,7 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour activer aléatoirement une ligne, colonne ou diagonale
     public void activerLigneColonneOuDiagonaleAleatoire() {
         Random random = new Random();
         int choix = random.nextInt(4); // 0, 1, 2, ou 3
@@ -85,6 +91,7 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour mélanger la grille de manière aléatoire
     public void melangerMatriceAleatoirement(int nbTours) {
         eteindreToutesLesCellules();
         for (int i = 0; i < nbTours; i++) {
@@ -92,6 +99,7 @@ public class GrilleDeCellules {
         }
     }
 
+    // Méthode pour vérifier si toutes les cellules sont éteintes
     public boolean cellulesToutesEteintes() {
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
@@ -103,6 +111,7 @@ public class GrilleDeCellules {
         return true;
     }
 
+    // Redéfinition de la méthode toString pour afficher la grille de manière organisée
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -132,39 +141,6 @@ public class GrilleDeCellules {
         builder.append("\n");
 
         return builder.toString();
-    }
-
-    public static void main(String[] args) {
-        GrilleDeCellules grille = new GrilleDeCellules(7, 7);
-
-        System.out.println("Grille initiale :");
-        System.out.println(grille);
-
-        grille.activerLigneDeCellules(2);
-        System.out.println("Après activation de la ligne 2 :");
-        System.out.println(grille);
-
-        grille.activerColonneDeCellules(1);
-        System.out.println("Après activation de la colonne 1 :");
-        System.out.println(grille);
-
-        grille.activerDiagonaleDescendante();
-        System.out.println("Après activation de la diagonale descendante :");
-        System.out.println(grille);
-
-        grille.activerDiagonaleMontante();
-        System.out.println("Après activation de la diagonale montante :");
-        System.out.println(grille);
-
-        grille.activerLigneColonneOuDiagonaleAleatoire();
-        System.out.println("Après activation aléatoire :");
-        System.out.println(grille);
-
-        grille.melangerMatriceAleatoirement(10);
-        System.out.println("Après mélange de la matrice (10 tours) :");
-        System.out.println(grille);
-
-        System.out.println("Toutes les cellules sont-elles éteintes ? " + grille.cellulesToutesEteintes());
     }
 }
 
