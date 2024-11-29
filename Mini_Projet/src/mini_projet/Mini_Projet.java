@@ -20,3 +20,5 @@ public class Mini_Projet {
         partie.lancerPartie(); // Lancement de la partie interactive
     }
 }
+
+        
