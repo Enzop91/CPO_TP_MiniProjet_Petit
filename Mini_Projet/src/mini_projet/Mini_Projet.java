@@ -54,6 +54,6 @@ public class Mini_Projet {
         cellule2.activerCellule();
 
         System.out.println("\nAprès réactivation de la cellule 2 :");
-        System.out.println("Cellule 2 : " + cellule2); // Devrait afficher "X" (allumée)
+        System.out.println("Cellule 2 : " + cellule2); // Devrait afficher "O" (allumée)
     }
 }
