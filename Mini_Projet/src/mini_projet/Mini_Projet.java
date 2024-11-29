@@ -62,5 +62,4 @@ public class Mini_Projet {
         System.out.println("\nAffichage de la grille de cellules :");
         System.out.println(grille); // Devrait afficher une matrice de cellules éteintes (O) } }
     }
-        
-}
+        }
