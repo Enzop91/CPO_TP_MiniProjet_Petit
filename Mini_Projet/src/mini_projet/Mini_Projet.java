@@ -14,7 +14,16 @@ public class Mini_Projet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        vu
+        CelluleLumineuse cellule = new CelluleLumineuse();
+        System.out.println(cellule); // Devrait afficher "O" (éteinte)
+        
+        cellule.activerCellule();
+        System.out.println(cellule); // Devrait afficher "X" (allumée)
+        
+        cellule.eteindreCellule();
+        System.out.println(cellule); // Devrait afficher "O" (éteinte)
+        
+        System.out.println("État actuel : " + (cellule.getEtat() ? "Allumée" : "Éteinte"));
+        System.out.println("Est éteinte ? " + cellule.estEteint());
     }
-    
 }
