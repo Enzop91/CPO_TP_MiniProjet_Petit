@@ -165,8 +165,7 @@ public class GrilleDeCellules {
         System.out.println(grille);
 
         System.out.println("Toutes les cellules sont-elles éteintes ? " + grille.cellulesToutesEteintes());
-    }
-}
+    }}
 
 
 
