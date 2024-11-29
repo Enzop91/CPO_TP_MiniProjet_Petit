@@ -9,22 +9,26 @@ package mini_projet;
  * @author louis
  */
 import java.util.Scanner;
-public class Partie {
-   
-    private GrilleDeCellules grille;
-    private int nbCoups;
 
+public class Partie {
+    // Attributs de la classe
+    private GrilleDeCellules grille; // Grille de jeu
+    private int nbCoups; // Compteur de coups
+
+    // Constructeur de la classe
     public Partie() {
         this.grille = new GrilleDeCellules(7, 7); // ou les dimensions souhaitées
         this.nbCoups = 0;
     }
 
+    // Méthode pour initialiser la partie (mélange de la grille)
     public void initialiserPartie() {
         grille.melangerMatriceAleatoirement(10); // ou le nombre de tours souhaité
         System.out.println("Grille mélangée pour débuter la partie :");
         System.out.println(grille);
     }
 
+    // Méthode pour lancer la partie (boucle de jeu)
     public void lancerPartie() {
         Scanner scanner = new Scanner(System.in);
 
@@ -60,12 +64,5 @@ public class Partie {
 
         System.out.println("Félicitations, vous avez éteint toutes les cellules en " + nbCoups + " coups !");
     }
-
-    public static void main(String[] args) {
-        Partie partie = new Partie();
-        partie.initialiserPartie();
-        partie.lancerPartie();
-    }
 }
-
 
