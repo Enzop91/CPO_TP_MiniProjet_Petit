@@ -9,37 +9,38 @@ package mini_projet;
  * @author enzop
  */
 public class CelluleLumineuse {
-    // Attribut privé pour indiquer l'état de la cellule
-    private boolean etat;
+    // Attribut représentant l'état de la cellule (allumée ou éteinte)
+    private boolean estAllumee;
 
-    // Constructeur par défaut, initialise la cellule à "éteinte" (false)
+    // Constructeur initialisant la cellule en état éteint
     public CelluleLumineuse() {
-        this.etat = false;
+        estAllumee = false; // Cellule éteinte par défaut
     }
 
-    // Méthode pour activer ou inverser l'état de la cellule
+    // Méthode pour activer (allumer) la cellule
     public void activerCellule() {
-        this.etat = !this.etat; // Inverse l'état actuel
+        estAllumee = !estAllumee; // Inverse l'état de la cellule
     }
 
     // Méthode pour éteindre la cellule
     public void eteindreCellule() {
-        this.etat = false; // Définit l'état à "éteinte"
+        estAllumee = false; // Éteint la cellule
     }
 
     // Méthode pour vérifier si la cellule est éteinte
     public boolean estEteint() {
-        return !this.etat; // Retourne true si la cellule est éteinte
+        return !estAllumee;
     }
 
-    // Méthode pour obtenir l'état actuel de la cellule
+    // Méthode pour obtenir l'état brut de la cellule
     public boolean getEtat() {
-        return this.etat; // Retourne l'état actuel (true ou false)
+        return estAllumee;
     }
 
-    // Redéfinition de la méthode toString pour représenter l'état de la cellule
+    // Redéfinition de la méthode toString pour afficher l'état de la cellule
     @Override
     public String toString() {
-        return this.etat ? "X" : "O"; // "X" si allumée, "O" si éteinte
+        return estAllumee ? "X" : "O"; // "X" si allumée, "O" si éteinte
     }
 }
+
