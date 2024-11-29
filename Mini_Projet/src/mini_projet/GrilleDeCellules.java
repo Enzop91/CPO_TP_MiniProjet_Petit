@@ -25,12 +25,19 @@ public class GrilleDeCellules {
         }
     }
     
-
-    // Méthodes (seront ajoutées dans les étapes suivantes)
-
+    // Redéfinition de toString pour afficher la grille
     @Override
-    public String toString() {
-        return "GrilleDeCellules{" + "matriceCellules=" + matriceCellules + '}';
+public String toString() {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < matriceCellules.length; i++) {
+        for (int j = 0; j < matriceCellules[i].length; j++) {
+            builder.append(matriceCellules[i][j].toString()).append(" ");
+        }
+        builder.append("\n");
     }
+    return builder.toString();
+}
+
+    
 }
 

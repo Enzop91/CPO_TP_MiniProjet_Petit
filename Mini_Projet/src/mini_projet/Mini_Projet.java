@@ -9,12 +9,13 @@ package mini_projet;
  * @author enzop
  */
 public class Mini_Projet {
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    CelluleLumineuse cellule1 = new CelluleLumineuse();
+        CelluleLumineuse cellule1 = new CelluleLumineuse();
         CelluleLumineuse cellule2 = new CelluleLumineuse();
 
         // Test initial des états des cellules
@@ -56,4 +57,5 @@ public class Mini_Projet {
         System.out.println("\nAprès réactivation de la cellule 2 :");
         System.out.println("Cellule 2 : " + cellule2); // Devrait afficher "O" (allumée)
     }
+        
 }
