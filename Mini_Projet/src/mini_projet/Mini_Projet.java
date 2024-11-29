@@ -56,6 +56,11 @@ public class Mini_Projet {
 
         System.out.println("\nAprès réactivation de la cellule 2 :");
         System.out.println("Cellule 2 : " + cellule2); // Devrait afficher "O" (allumée)
+        
+        // Création et affichage de la grille de cellules
+        GrilleDeCellules grille = new GrilleDeCellules(3, 3);
+        System.out.println("\nAffichage de la grille de cellules :");
+        System.out.println(grille); // Devrait afficher une matrice de cellules éteintes (O) } }
     }
         
 }
