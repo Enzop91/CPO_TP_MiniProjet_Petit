@@ -4,6 +4,8 @@
  */
 package mini_projet;
 
+import java.util.Random;
+
 /**
  *
  * @author louis
@@ -38,6 +40,52 @@ public String toString() {
     return builder.toString();
 }
 
-    
+ public void activerLigneDeCellules(int idLigne) {
+    for (int j = 0; j < matriceCellules[idLigne].length; j++) {
+        matriceCellules[idLigne][j].activerCellule();
+    }
+}
+public void activerColonneDeCellules(int idColonne) {
+    for (int i = 0; i < matriceCellules.length; i++) {
+        matriceCellules[i][idColonne].activerCellule();
+    }
+}
+public void activerDiagonaleDescendante() {
+    int minDimension = Math.min(matriceCellules.length, matriceCellules[0].length);
+    for (int i = 0; i < minDimension; i++) {
+        matriceCellules[i][i].activerCellule();
+    }
+}
+public void activerDiagonaleMontante() {
+    int minDimension = Math.min(matriceCellules.length, matriceCellules[0].length);
+    for (int i = 0; i < minDimension; i++) {
+        matriceCellules[i][minDimension - 1 - i].activerCellule();
+    }
+}
+public void activerLigneColonneOuDiagonaleAleatoire() {
+    Random random = new Random();
+    int choix = random.nextInt(4); // 0, 1, 2, ou 3
+
+    switch (choix) {
+        case 0:
+            activerLigneDeCellules(random.nextInt(matriceCellules.length));
+            break;
+        case 1:
+            activerColonneDeCellules(random.nextInt(matriceCellules[0].length));
+            break;
+        case 2:
+            activerDiagonaleDescendante();
+            break;
+        case 3:
+            activerDiagonaleMontante();
+            break;
+    }
+}
+public void melangerMatriceAleatoirement(int nbTours) {
+    for (int i = 0; i < nbTours; i++) {
+        activerLigneColonneOuDiagonaleAleatoire();
+    }
+}
+   
 }
 
