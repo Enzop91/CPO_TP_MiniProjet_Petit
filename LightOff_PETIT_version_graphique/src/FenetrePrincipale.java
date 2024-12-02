@@ -18,14 +18,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
      */
     public FenetrePrincipale(int nblignes, int nbColonnes) {
         initComponents();
-        int nbcolonnes = 10;
-        int nbLignes = 10;
-        PanneauGrille.setLayout (new GridLayout(nblignes, nbcolonnes));
-        for (int i=0; i < nbLignes; i++) { 
-            for (int j=0; j < nbColonnes; j++ ) { 
-            JButton bouton_cellule = new JButton(); // création d'un bouton 
-                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
-} 
+        nblignes = 10; 
+        nbColonnes = 10; 
+        PanneauGrille.setLayout(new GridLayout(nblignes, nbColonnes));  
+        for (int i=0; i < nblignes; i++) { 
+        for (int j=0; j < nbColonnes; j++ ) { 
+        JButton bouton_cellule = new JButton(); // création d'un bouton 
+           PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
+    } 
 } 
     }
 
@@ -43,7 +43,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanneauGrille.setBackground(new java.awt.Color(102, 255, 102));
+        PanneauGrille.setBackground(new java.awt.Color(0, 102, 255));
 
         javax.swing.GroupLayout PanneauGrilleLayout = new javax.swing.GroupLayout(PanneauGrille);
         PanneauGrille.setLayout(PanneauGrilleLayout);
@@ -91,7 +91,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetrePrincipale().setVisible(true);
+                new FenetrePrincipale(10,10).setVisible(true);
             }
         });
     }
