@@ -13,7 +13,7 @@ import java.util.Random;
 
 public class GrilleDeCellules {
     // Attributs de la classe
-    private CelluleLumineuse[][] matriceCellules; // Matrice de cellules lumineuses
+    public CelluleLumineuse[][] matriceCellules; // Matrice de cellules lumineuses
     private int nbLignes; // Nombre de lignes de la grille
     private int nbColonnes; // Nombre de colonnes de la grille
 

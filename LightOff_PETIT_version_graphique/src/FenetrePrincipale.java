@@ -23,14 +23,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         initComponents();
         nblignes = 10; 
         nbColonnes = 10; 
-        GrilleDeCellules grille; 
+        int GrilleDeCellulesgrille = 0; 
         int nbCoups; 
         this.grille = new GrilleDeCellules(nblignes, nbColonnes); 
         PanneauGrille.setLayout(new GridLayout(nblignes, nbColonnes));  
         for (int i=0; i < nblignes; i++) { 
         for (int j=0; j < nbColonnes; j++ ) { 
-        JButton bouton_cellule = new JButton(); // création d'un bouton 
-           PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
+        CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[i][j], 36, 36); 
+        PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
     } 
 }  
    initialiserPartie();
@@ -59,14 +59,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauGrille.setLayout(PanneauGrilleLayout);
         PanneauGrilleLayout.setHorizontalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
         PanneauGrilleLayout.setVerticalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 400, 400));
+        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 360, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
