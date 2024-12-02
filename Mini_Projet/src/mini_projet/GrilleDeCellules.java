@@ -13,24 +13,23 @@ import java.util.Random;
 
 public class GrilleDeCellules {
     // Attributs de la classe
-    private CelluleLumineuse[][] matriceCellules; // Matrice de cellules lumineuses
+    public CelluleLumineuse[][] matriceCellules; // Matrice de cellules lumineuses
     private int nbLignes; // Nombre de lignes de la grille
     private int nbColonnes; // Nombre de colonnes de la grille
 
     // Constructeur de la classe
     public GrilleDeCellules(int p_nbLignes, int p_nbColonnes) {
-        this.nbLignes = p_nbLignes;
-        this.nbColonnes = p_nbColonnes;
-        this.matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
-
-        // Initialisation de la grille avec des cellules lumineuses
-        for (int i = 0; i < nbLignes; i++) {
-            for (int j = 0; j < nbColonnes; j++) {
-                matriceCellules[i][j] = new CelluleLumineuse();
-            }
+    this.nbLignes = p_nbLignes;
+    this.nbColonnes = p_nbColonnes;
+    this.matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
+    for (int i = 0; i < nbLignes; i++) {
+        for (int j = 0; j < nbColonnes; j++) {
+            matriceCellules[i][j] = new CelluleLumineuse();
         }
     }
+}
 
+    
     // Méthode pour éteindre toutes les cellules de la grille
     public void eteindreToutesLesCellules() {
         for (int i = 0; i < nbLignes; i++) {
