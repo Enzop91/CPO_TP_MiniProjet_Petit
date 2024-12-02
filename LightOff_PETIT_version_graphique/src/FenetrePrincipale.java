@@ -1,6 +1,7 @@
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import mini_projet.GrilleDeCellules;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -13,22 +14,31 @@ import javax.swing.JButton;
  */
 public class FenetrePrincipale extends javax.swing.JFrame {
 
+    private final GrilleDeCellules grille;
+
     /**
      * Creates new form FenetrePrincipale
      */
-    public FenetrePrincipale(int nblignes, int nbColonnes) {
+    public FenetrePrincipale(int nblignes, int nbColonnes) { 
         initComponents();
         nblignes = 10; 
         nbColonnes = 10; 
+        GrilleDeCellules grille; 
+        int nbCoups; 
+        this.grille = new GrilleDeCellules(nblignes, nbColonnes); 
         PanneauGrille.setLayout(new GridLayout(nblignes, nbColonnes));  
         for (int i=0; i < nblignes; i++) { 
         for (int j=0; j < nbColonnes; j++ ) { 
         JButton bouton_cellule = new JButton(); // création d'un bouton 
            PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
     } 
-} 
+}  
+   initialiserPartie();
     }
-
+    public void initialiserPartie() { 
+    grille.eteindreToutesLesCellules(); 
+    grille.melangerMatriceAleatoirement(10); 
+} 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,6 +104,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 new FenetrePrincipale(10,10).setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
