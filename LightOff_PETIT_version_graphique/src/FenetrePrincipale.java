@@ -51,6 +51,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         PanneauGrille = new javax.swing.JPanel();
         btnLigne0 = new javax.swing.JButton();
+        btnColonne0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,14 +62,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauGrille.setLayout(PanneauGrilleLayout);
         PanneauGrilleLayout.setHorizontalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
         PanneauGrilleLayout.setVerticalGroup(
             PanneauGrilleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 360, 360));
+        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 430, 340));
 
         btnLigne0.setText("btnLigne0");
         btnLigne0.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +77,15 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 btnLigne0ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLigne0, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        getContentPane().add(btnLigne0, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 30));
+
+        btnColonne0.setText("C0");
+        btnColonne0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColonne0ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnColonne0, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,6 +94,11 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         this.grille.activerLigneDeCellules(0); 
         repaint();
     }//GEN-LAST:event_btnLigne0ActionPerformed
+
+    private void btnColonne0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne0ActionPerformed
+        this.grille.activerColonneDeCellules(0); 
+        repaint();
+    }//GEN-LAST:event_btnColonne0ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +138,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanneauGrille;
+    private javax.swing.JButton btnColonne0;
     private javax.swing.JButton btnLigne0;
     // End of variables declaration//GEN-END:variables
 }
