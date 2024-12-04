@@ -85,7 +85,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
                 btnColonne0ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnColonne0, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 50, 30));
+        getContentPane().add(btnColonne0, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 43, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
