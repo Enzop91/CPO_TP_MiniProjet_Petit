@@ -42,5 +42,13 @@ public class CelluleLumineuse {
     public String toString() {
         return estAllumee ? "X" : "O"; // "X" si allumée, "O" si éteinte
     }
+
+    public void toggle() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean estAllumee() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
 

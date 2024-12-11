@@ -12,21 +12,41 @@ import mini_projet.CelluleLumineuse;
  *
  * @author louis
  */
-    public class CelluleGraphique extends JButton { 
-int largeur; // largeur en pixel de la cellule 
-int hauteur; // hauteur en pixel de la cellule 
-CelluleLumineuse celluleLumineuseAssociee;  
-// constructeur (appelé depuis FenetrePrincipale) 
-public CelluleGraphique(CelluleLumineuse celluleLumineuseAssociee, int l,int h) { 
-this.largeur = l; 
-this.hauteur = h; 
-this.celluleLumineuseAssociee = celluleLumineuseAssociee; 
-} 
-// Methode gérant le dessin de la cellule  
-@Override 
-protected void paintComponent(Graphics g) { 
-super.paintComponent(g);  
-this.setText(celluleLumineuseAssociee.toString()); 
-} 
-} 
+    import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class CelluleGraphique extends JButton {
+    int largeur; // largeur en pixel de la cellule
+    int hauteur; // hauteur en pixel de la cellule
+    CelluleLumineuse celluleLumineuseAssociee;
+
+    // Constructeur
+    public CelluleGraphique(CelluleLumineuse celluleLumineuseAssociee, int l, int h) {
+        this.largeur = l;
+        this.hauteur = h;
+        this.celluleLumineuseAssociee = celluleLumineuseAssociee;
+        this.addActionListener(e -> toggleLight());
+        this.setContentAreaFilled(false);
+        this.setOpaque(true);
+    }
+
+    // Méthode pour basculer l'état de la lumière
+    private void toggleLight() {
+        celluleLumineuseAssociee.activerCellule(); // Utilisation de la méthode existante pour inverser l'état
+        repaint();
+    }
+
+    // Méthode gérant le dessin de la cellule
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (celluleLumineuseAssociee.getEtat()) {
+            setBackground(Color.YELLOW); // Couleur quand la lumière est allumée
+        } else {
+            setBackground(Color.DARK_GRAY); // Couleur quand la lumière est éteinte
+        }
+    }
+}
+
 
