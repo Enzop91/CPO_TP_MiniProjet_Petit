@@ -36,6 +36,7 @@ public class CelluleGraphique extends JButton {
         celluleLumineuseAssociee.activerCellule(); // Utilisation de la méthode existante pour inverser l'état
         repaint();
     }
+    
 
     // Méthode gérant le dessin de la cellule
     @Override
