@@ -45,7 +45,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     
 } 
      
-    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,6 +78,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -273,6 +274,14 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         });
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, 30));
 
+        jTextField1.setText("Félicitations vous avez gagner !!");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -385,6 +394,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
        this.grille.activerDiagonaleMontante();
         repaint(); 
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -446,5 +459,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
