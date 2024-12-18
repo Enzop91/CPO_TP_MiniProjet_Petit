@@ -35,6 +35,7 @@ public class Partie {
         while (!grille.cellulesToutesEteintes()) {
             System.out.println("Entrez votre coup (L/C/D, suivi de l'indice) : ");
             String coup = scanner.nextLine().toUpperCase();
+             
             char typeCoup = coup.charAt(0);
             int index = Integer.parseInt(coup.substring(1).trim());
 
@@ -58,11 +59,13 @@ public class Partie {
             }
 
             nbCoups++;
+            if (grille.cellulesToutesEteintes()) {
+                System.out.println("Félicitations, vous avez éteint toutes les cellules en " + nbCoups + " coups !");
+                return; // Use return to exit once the game is over
+            }
             System.out.println("Grille après le coup " + nbCoups + " :");
             System.out.println(grille);
         }
-
-        System.out.println("Félicitations, vous avez éteint toutes les cellules en " + nbCoups + " coups !");
-    }
+    } // Scanner automatically closes here
 }
 

@@ -92,11 +92,15 @@ public class GrilleDeCellules {
 
     // Méthode pour mélanger la grille de manière aléatoire
     public void melangerMatriceAleatoirement(int nbTours) {
-        eteindreToutesLesCellules();
-        for (int i = 0; i < nbTours; i++) {
-            activerLigneColonneOuDiagonaleAleatoire();
-        }
+    Random random = new Random();
+    eteindreToutesLesCellules(); // Éteint toutes les cellules avant de commencer à mélanger
+
+    for (int i = 0; i < nbTours; i++) {
+        int x = random.nextInt(nbLignes); // Choix aléatoire de l'indice de ligne
+        int y = random.nextInt(nbColonnes); // Choix aléatoire de l'indice de colonne
+        matriceCellules[x][y].activerCellule(); // Active la cellule à la position (x, y)
     }
+}
 
     // Méthode pour vérifier si toutes les cellules sont éteintes
     public boolean cellulesToutesEteintes() {
