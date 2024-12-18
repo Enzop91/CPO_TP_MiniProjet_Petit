@@ -36,7 +36,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     } 
         
 }  
-      
    initialiserPartie();
     }
     public void initialiserPartie() { 
