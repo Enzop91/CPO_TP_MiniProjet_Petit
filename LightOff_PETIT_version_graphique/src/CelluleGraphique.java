@@ -43,9 +43,9 @@ public class CelluleGraphique extends JButton {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (celluleLumineuseAssociee.getEtat()) {
-            setBackground(Color.GREEN); // Couleur quand la lumière est allumée
+            setBackground(Color.WHITE); // Couleur quand la lumière est allumée
         } else {
-            setBackground(Color.BLACK); // Couleur quand la lumière est éteinte
+            setBackground(Color.MAGENTA); // Couleur quand la lumière est éteinte
         }
     }
     
