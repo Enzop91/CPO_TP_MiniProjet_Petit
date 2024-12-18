@@ -48,6 +48,7 @@ public class CelluleGraphique extends JButton {
             setBackground(Color.BLACK); // Couleur quand la lumière est éteinte
         }
     }
+    
 }
 
 
