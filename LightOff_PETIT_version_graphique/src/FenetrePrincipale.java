@@ -3,6 +3,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import mini_projet.GrilleDeCellules;
+import mini_projet.Partie;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -43,7 +44,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     grille.melangerMatriceAleatoirement(10); 
     
 } 
-     
+      
    
     /**
      * This method is called from within the constructor to initialize the form.

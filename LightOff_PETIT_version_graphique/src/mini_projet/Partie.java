@@ -16,13 +16,13 @@ public class Partie {
     private int nbCoups; // Compteur de coups
 
     // Constructeur de la classe
-    public Partie() {
+    public Partie(int par, int par1) {
         this.grille = new GrilleDeCellules(7, 7); // ou les dimensions souhaitées
         this.nbCoups = 0;
     }
 
     // Méthode pour initialiser la partie (mélange de la grille)
-    public void initialiserPartie() {
+    public void initialiserPartie(int par) {
         grille.melangerMatriceAleatoirement(10); // ou le nombre de tours souhaité
         System.out.println("Grille mélangée pour débuter la partie :");
         System.out.println(grille);
